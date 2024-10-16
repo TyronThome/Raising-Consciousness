@@ -13,7 +13,7 @@ const ServiceCards = ({ onScrollToCard }) => {
           className="md:max-w-md lg:max-w-2xl"
           title="Living in the Solution, with Raising Consciousness"
         />
-        <div className="flex flex-wrap gap-10 mb-10">
+        <div className="flex flex-wrap gap-10 mb-10 lg:flex-row">
           {benefits.map((item, index) => (
             <div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
