@@ -2,6 +2,8 @@ import Section from "./Section";
 // import { smallSphere, stars } from "../assets";
 import Heading from "./Heading";
 import { Gradient } from "./design/Roadmap";
+import companyLogo from "../assets/image-2.webp";
+import directorImage from "../assets/director.webp";
 
 // ABOUT SECTION
 
@@ -36,13 +38,14 @@ const About = () => {
 
         <Gradient />
 
-        {/* <div className="relative">
-        <PricingList />
-        <LeftLine />
-        <RightLine />
-      </div> */}
-
         <h4 className="h4 flex justify-center text-n-2">About us </h4>
+        <div className="flex justify-center mt-4">
+          <img
+            src={companyLogo}
+            alt="Company Logo"
+            className="w-[150px] h-auto mb-4"
+          />
+        </div>
         <div className="container flex justify-center items-center">
           <p className="text-n-3">
             Many people think consciousness is some kind of highly evolved
@@ -88,6 +91,13 @@ const About = () => {
         <h4 className="h4 flex justify-center text-n-2 mt-6">
           About Our Director{" "}
         </h4>
+        <div className="flex justify-center mt-4">
+          <img
+            src={directorImage}
+            alt="Director"
+            className="w-[150px] h-auto rounded-full mb-4"
+          />
+        </div>
         <div className="container flex justify-center items-center">
           <p className="text-n-3">
             In 2000, Taryn started working with an NGO which provided Substance

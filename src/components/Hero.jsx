@@ -1,5 +1,4 @@
 import { curve, heroBackground } from "../assets";
-import Button from "./Button";
 import Section from "./Section";
 import { BackgroundCircles } from "./design/Hero";
 import { useRef } from "react";
@@ -17,8 +16,7 @@ const Hero = () => {
       <div className="container relative" ref={parallaxRef}>
         <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[3.875rem] md:mb-20 lg:mb-[6.25rem]">
           <h1 className="h2 mb-8 gradient-animation">
-            {/* Living in the Solution{` `} */}
-            <span className="inline-block relative gradient-animation uppercase lg:mt-40 font-bold">
+            <span className="inline-block relative gradient-animation uppercase lg:mt-60 font-bold sm:mt-20">
               Raising Consciousness{" "}
               <img
                 src={curve}
@@ -33,9 +31,6 @@ const Hero = () => {
             Uplifting Youth and Communities by Providing Training , Awareness
             and Solutions to Social Issues
           </p>
-          <Button href="#about" white className="mt-6">
-            Get started
-          </Button>
         </div>
 
         <div className="absolute -top-[35%] left-0 h-screen">
