@@ -5,16 +5,12 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    assetsDir: "assets", // Ensure all assets are placed in this directory
     rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name.endsWith(".svg")) {
-            return "assets/[name].[hash][extname]"; // Output SVGs in the assets folder
-          }
-          return "assets/[name].[hash][extname]";
-        },
-      },
+      external: [
+        "@assets/card-1.svg",
+        "@assets/card-2.svg",
+        "@assets/card-3.svg",
+      ],
     },
   },
   server: {

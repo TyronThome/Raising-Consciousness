@@ -4,9 +4,9 @@ import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { Gradient } from "./design/Roadmap";
-import card1 from "../assets/card-1.svg";
-import card2 from "../assets/card-2.svg";
-import card3 from "../assets/card-3.svg";
+import card1 from "/src/assets/card-1.svg";
+import card2 from "/src/assets/card-2.svg";
+import card3 from "/src/assets/card-3.svg";
 
 const updatedBenefits = [
   {
