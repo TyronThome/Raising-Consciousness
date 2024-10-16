@@ -1,18 +1,21 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      "@assets": path.resolve(__dirname, "./src/assets"), // Alias for assets
-    },
-  },
-  assetsInclude: ["**/*.svg"],
   build: {
     assetsDir: "assets", // Ensure all assets are placed in this directory
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name.endsWith(".svg")) {
+            return "assets/[name].[hash][extname]"; // Output SVGs in the assets folder
+          }
+          return "assets/[name].[hash][extname]";
+        },
+      },
+    },
   },
   server: {
     proxy: {
