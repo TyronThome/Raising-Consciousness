@@ -66,14 +66,14 @@ const Contact = () => {
               </div>
               <div className="flex items-center bg-green-500 rounded-lg hover:bg-blue-400 transition py-2 px-4">
                 <AiOutlineWhatsApp className="text-2xl mr-2" />
-                <a href="https://wa.me/27795582312" className="text-white">
-                  079 558 2312
+                <a href="https://wa.me/27783479977" className="text-white">
+                  078 347 9977
                 </a>
               </div>
               <div className="flex items-center bg-violet-600 rounded-lg hover:bg-blue-400 transition py-2 px-4">
                 <AiFillPhone className="text-2xl mr-2" />
-                <a href="tel:+27217037082" className="text-white">
-                  021 703 7082
+                <a href="tel:+27783479977" className="text-white">
+                  078 347 9977
                 </a>
               </div>
             </div>

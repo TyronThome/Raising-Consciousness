@@ -4,9 +4,9 @@ import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { Gradient } from "./design/Roadmap";
-import card1 from "../assets/benefits/card-1.svg";
-import card2 from "../assets/benefits/card-2.svg";
-import card3 from "../assets/benefits/card-3.svg";
+import card1 from "../assets/card-1.svg";
+import card2 from "../assets/card-2.svg";
+import card3 from "../assets/card-3.svg";
 
 const updatedBenefits = [
   {
@@ -43,10 +43,10 @@ const ServiceCards = ({ onScrollToCard }) => {
           className="md:max-w-md lg:max-w-2xl"
           title="Living in the Solution, with Raising Consciousness"
         />
-        <div className="flex flex-wrap gap-10 mb-10 lg:flex-row">
+        <div className="flex flex-wrap gap-10 mb-10 lg:gap-8 lg:flex-row lg:justify-center">
           {updatedBenefits.map((item, index) => (
             <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
+              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-full md:w-[48%] lg:w-[30%] max-w-[24rem]"
               style={{
                 backgroundImage: `url(${item.backgroundUrl})`,
               }}
