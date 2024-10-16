@@ -25,8 +25,7 @@ const Collaboration = forwardRef((props, ref) => {
             key={item.id}
             id={`card-${item.id}`}
             ref={(el) => (cardRefs.current[index] = el)}
-            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%]"
-            style={{ backgroundImage: `url(${item.backgroundUrl})` }}
+            className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] bg-gradient-to-r from-orange-300 via-green-500 to-blue-500 rounded-lg"
           >
             <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] pointer-events-none">
               <h4 className="h4 mb-5 gradient-animation text-center">

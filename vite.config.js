@@ -5,14 +5,9 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   build: {
-    rollupOptions: {
-      external: [
-        "@assets/card-1.svg",
-        "@assets/card-2.svg",
-        "@assets/card-3.svg",
-      ],
-    },
+    assetsDir: "assets", // Optional, but ensures assets are kept in 'dist/assets' folder
   },
+  base: "/",
   server: {
     proxy: {
       "/api": {

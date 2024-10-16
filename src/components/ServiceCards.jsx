@@ -1,12 +1,12 @@
-// import { benefits } from "../constants";
+// Importing SVGs with relative paths
+import card1 from "../assets/card-1.svg";
+import card2 from "../assets/card-2.svg";
+import card3 from "../assets/card-3.svg";
 import Heading from "./Heading";
 import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { Gradient } from "./design/Roadmap";
-import card1 from "/src/assets/card-1.svg";
-import card2 from "/src/assets/card-2.svg";
-import card3 from "/src/assets/card-3.svg";
 
 const updatedBenefits = [
   {
@@ -46,10 +46,7 @@ const ServiceCards = ({ onScrollToCard }) => {
         <div className="flex flex-wrap gap-10 mb-10 lg:gap-8 lg:flex-row justify-center">
           {updatedBenefits.map((item, index) => (
             <div
-              className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-full md:w-[48%] lg:w-[30%] max-w-[24rem]"
-              style={{
-                backgroundImage: `url(${item.backgroundUrl})`,
-              }}
+              className="block relative p-1 w-full md:w-[48%] lg:w-[30%] max-w-[24rem] bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 rounded-lg"
               key={item.id}
             >
               <div className="relative z-2 flex flex-col h-full min-h-[22rem] p-[2.4rem]">
