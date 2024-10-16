@@ -4,9 +4,9 @@ import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { Gradient } from "./design/Roadmap";
-import card1 from "../assets/card-1.svg";
-import card2 from "../assets/card-2.svg";
-import card3 from "../assets/card-3.svg";
+import card1 from "@assets/card-1.svg";
+import card2 from "@assets/card-2.svg";
+import card3 from "@assets/card-3.svg";
 
 const updatedBenefits = [
   {
@@ -43,7 +43,7 @@ const ServiceCards = ({ onScrollToCard }) => {
           className="md:max-w-md lg:max-w-2xl"
           title="Living in the Solution, with Raising Consciousness"
         />
-        <div className="flex flex-wrap gap-10 mb-10 lg:gap-8 lg:flex-row lg:justify-center">
+        <div className="flex flex-wrap gap-10 mb-10 lg:gap-8 lg:flex-row justify-center">
           {updatedBenefits.map((item, index) => (
             <div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] w-full md:w-[48%] lg:w-[30%] max-w-[24rem]"
@@ -52,7 +52,7 @@ const ServiceCards = ({ onScrollToCard }) => {
               }}
               key={item.id}
             >
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem]">
+              <div className="relative z-2 flex flex-col h-full min-h-[22rem] p-[2.4rem]">
                 <h5 className="h5 mb-5 gradient-animation">{item.title}</h5>
                 <p className="body-2 lg:mb-6 mb-2 text-n-3">{item.text}</p>
                 <button
