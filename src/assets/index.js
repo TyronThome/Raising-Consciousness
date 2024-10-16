@@ -9,18 +9,16 @@ import background from "./background.jpg";
 
 import curve from "./hero/curve.png";
 import poster from "./hero/poster.png";
-import heroBackground from "./hero/hero-background.png";
+import heroBackground from "./hero/hero-background.webp";
 
 import curve1 from "./collaboration/curve-1.svg";
 import curve2 from "./collaboration/curve-2.svg";
 
-import coins from "./roadmap/coins.png";
 import done from "./roadmap/done.svg";
-import hero from "./roadmap/hero.png";
-import roadmap1 from "./roadmap/image-1.png";
-import roadmap2 from "./roadmap/image-2.png";
-import roadmap3 from "./roadmap/image-3.png";
-import roadmap4 from "./roadmap/image-4.png";
+import roadmap1 from "./roadmap/image-1.webp";
+import roadmap2 from "./roadmap/image-2.webp";
+import roadmap3 from "./roadmap/image-3.webp";
+import roadmap4 from "./roadmap/image-4.webp";
 import undone from "./roadmap/undone.svg";
 
 import benefitCard1 from "./benefits/card-1.svg";
@@ -49,9 +47,7 @@ export {
   heroBackground,
   curve1,
   curve2,
-  coins,
   done,
-  hero,
   roadmap1,
   roadmap2,
   roadmap3,

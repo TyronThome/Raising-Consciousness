@@ -3,7 +3,9 @@ import {
   facebook,
   instagram,
   roadmap1,
+  roadmap2,
   roadmap3,
+  roadmap4,
   twitter,
 } from "../assets";
 
@@ -54,14 +56,6 @@ Join us in making our roads safer and ensuring that no pedestrian or cyclist rem
     imageUrl: roadmap1,
     colorful: true,
   },
-  // {
-  //   id: "1",
-  //   title: "Nyanga Mens' Empowerment",
-  //   text: "Working with the Nyanga Mens' Empowerment group to raise the community consciousness by empowering and elevating the men of the local area.",
-  //   date: "May 2023",
-  //   status: "progress",
-  //   imageUrl: roadmap2,
-  // },
   {
     id: "1",
     title: "Conscious School Programmes",
@@ -82,16 +76,32 @@ We also offer workshops for parents, educators, and organizations. Our comprehen
 We encourage individuals to develop a strong sense of self and an awareness of their impact on others. Each weekly session consists of a 50-minute interactive workshop followed by a 50-minute group facilitation process, allowing participants to cultivate compassion, empathy, and mindfulness for themselves and those around them.`,
     date: "May 2023",
     status: "done",
+    imageUrl: roadmap4,
+  },
+  {
+    id: "2",
+    title: "Conscious Camps",
+    text: `We run training camps for teams and youth to address specific aims and needs. Our "Train the Trainer" program has successfully trained Xhosa-speaking facilitators at the Soetwater Environmental Centre, where we incorporate eco-awareness and emphasize the importance of recycling, alongside tackling the growing issue of litter.
+
+Additionally, we have hosted camps specifically designed for individuals in recovery from addiction, providing them with relapse prevention tools and life skills to replace outdated thought patterns. We also facilitate camps for other organizations focused on brainstorming and structuring effective partnerships within communities.
+
+Looking ahead, we will be implementing camps for youth to train as peer mentors, equipping them to offer invaluable support in schools.`,
+    date: "May 2023",
+    status: "progress",
+    imageUrl: roadmap2,
+  },
+  {
+    id: "3",
+    title: "Collaborating with other NGOs",
+    text: `Raising Consciousness collaborates with other organizations within the communities we serve. We believe that by working together and supporting one another, we can create a stronger network of support and make a greater impact.
+
+We facilitate training, workshops, and camps to provide valuable information that can be integrated into local communities. Our team is always ready to assist with facilitation and counseling whenever the need arises.
+
+If your organization requires any of our training or workshops, please do not hesitate to contact us.`,
+    date: "May 2023",
+    status: "progress",
     imageUrl: roadmap3,
   },
-  // {
-  //   id: "3",
-  //   title: "Group Lifeskills",
-  //   text: "Allow the chatbot to access external data sources, such as weather APIs or news APIs, to provide more relevant recommendations.",
-  //   date: "May 2023",
-  //   status: "progress",
-  //   imageUrl: roadmap4,
-  // },
 ];
 
 export const benefits = [
@@ -188,17 +198,17 @@ All counseling and therapy services are available through online or in-person se
     title: "Courses",
     text: `RAISING CONSCIOUS TEENS
 
-CONSCIOUS GIRLS (Ages 12-15 years of age)
+These courses cater for teens from 12 yeaars old to 19 years old. The younger teens and older teens courses are designed to address issues specific to the ages and gender, thus there are girls and boys groups.
 
-This is a set of 8 workshops running weekly in 2hr sessions for a duration of 8 weeks.
+Each course set of 8 workshops running weekly in 2hr sessions for a duration of 8 weeks.
 The workshops are broken up into two 40-minute sessions with a refreshment break in between.
 Refreshments are provided.
 
-The workshops in the first 40 minutes aim to empower young woman to gain a strong sense of self, maintain healthy communication and interpersonal dynamics and gain skills to process and regulate emotion in a healthy way.  
+The workshops in the first 40 minutes aim to empower young people to gain a strong sense of self, maintain healthy communication and interpersonal dynamics and gain skills to process and regulate emotion in a healthy way.  
 
 In the second 40 minutes of each weekly session, we use a group therapy process to help individuals become more conscious of their own behaviours by easier recognising them mirrored in others. We teach teens to give gentle and honest feedback and assist them in receiving uncomfortable feedback without old defences or acting out or victim thinking.
 
-This course is specifically designed to deal with age and gender appropriate issues and topics relevant to teenagers in current times.
+The courses specifically designed to deal with age and gender appropriate issues and topics relevant to teenagers in current times.
 
 Topics covered are
 ·         Creating a vision and identity
@@ -207,101 +217,14 @@ Topics covered are
 ·         Inclusion vs exclusion
 ·         Body Image and self esteem
 ·         Understanding and recognising addictive behaviours, including social media,
-           eating disorders, sex and love addiction and co-dependency
+        eating disorders, sex and love addiction and co-dependency
 ·         Maintaining healthy boundaries and recognising toxic behaviour
 ·         Peer Pressure and setting healthy boundaries
 ·         Making informed decisions
 
 Parents are asked to attend the first and last week’s sessions as we feel the family needs to work together as a unit to achieve a positive and cooperative family dynamic.
-Cost of the course including all course materials is R3280 and payment plans can be arranged.
 
-
-
-CONSCIOUS BOYS (Ages 12-15 years of age)
-
-This is a set of 8 workshops running weekly in 2hr sessions for a duration of 8 weeks.
-The workshops are broken up into two 40-minute sessions with a refreshment break in between.
-Refreshments are provided.
-
-The workshops cover the first 40 minutes and aim to empower young adolescents to gain a strong sense of self, maintain healthy communication and interpersonal dynamics and gain skills to process and regulate emotions in a healthy way. “Fitting in’ or being popular, and body image are two key topics for boys of this age, as well as bullying, or inclusion versus exclusion. The group process helps individuals to gain insight into how these behaviours affect others, and develop a greater understanding of themselves and the impact that they have on those around them.
-
-In the second 40 minutes of each weekly session, we use a group therapy process to help individuals become more conscious of their own behaviours by easier recognising them mirrored in others. We teach teens to give gentle and honest feedback and assist them in receiving uncomfortable feedback without old defences or acting out or victim thinking.
-
-This course is specifically designed to deal with age and gender appropriate issues and topics relevant to teenagers in current times.
-
-Topics covered are
-·         Creating a vision and identity
-·         Dealing with feelings in a healthy manner
-·         Healthy Communication and interpersonal skills
-·         Inclusion vs exclusion
-·         Body Image and self esteem
-·         Understanding and recognising addictive behaviours, including social media, eating disorders, sex and love addiction and co-dependency.
-·         Maintaining healthy boundaries and recognising toxic behaviour
-·         Making informed decisions
-·         Peer Pressure and setting healthy boundaries
-
-Parents are asked to attend the first and last week’s sessions as we feel the family needs to work together as a unit to achieve a positive and cooperative family dynamic.
-Cost of the course including all course materials is R3280 payment plans can be arranged.
-
- 
-
-BECOMING CONSCIOUS WOMEN (Ages 15-19 years of age)
-
-This is a set of 8 workshops running weekly in 2hr sessions for a duration of 8 weeks.
-The workshops are broken up into two 50-minute sessions with a refreshment break in between.
-Refreshments are provided.
-
-The workshops cover the first 50 minutes and aim to empower young women to gain a strong sense of self, maintain healthy communication and interpersonal dynamics and gain skills to process and regulate emotion in a healthy way.  The areas of sex and sexuality, pros and cons of social media and recognising toxic and addictive behaviour and what to do if you or a friend has a problem are explored in more depth in the older age groups.
-
-In the second 50 minutes of each weekly session, we use a group therapy process to help individuals become more conscious of their own behaviours by easier recognising them mirrored in others. We teach teens to give gentle and honest feedback and assist them in receiving uncomfortable feedback without old defences or acting out or victim thinking.
-
-This course is specifically designed to deal with age and gender appropriate issues and topics relevant to teenagers in current times.
-
-Topics covered are
-·         Creating a vision and identity
-·         Dealing with feelings in a healthy manner
-·         Healthy Communication and interpersonal skills
-·         Peer Pressure and setting healthy boundaries
-·         Inclusion vs exclusion
-·         Body Image and self esteem
-·         Understanding addictions and recognising addictive behaviours,
-         including social media, eating disorders, sex and love addiction and co-dependency.
-·         Maintaining healthy boundaries and recognising toxic behaviour
-·         Making informed decisions
-          
-Parents are asked to attend the first and last week’s sessions as we feel the family needs to work together as a unit to achieve a positive and cooperative family dynamic.
-Cost of the course including all course materials is R2680 payment plans can be arranged.
-
- 
-
-BECOMING CONSCIOUS MEN (Ages 15-19 years of age)
-
-This is a set of 8 workshops running weekly in 2hr sessions for a duration of 8 weeks.
-The workshops are broken up into two 50-minute sessions with a refreshment break in between.
-Refreshments are provided.
-
-The workshops cover the first 50 minutes and aim to empower young men to gain a strong sense of self, maintain healthy communication and interpersonal dynamics and gain skills to process and regulate emotion in a healthy way.  The areas of sex and sexuality, pros and cons of social media and recognising toxic and addictive behaviour and what to do if you or a friend has a problem are explored in more depth in the older age groups.
-
-In the second 50 minutes of each weekly session, we use a group therapy process to help individuals become more conscious of their own behaviours by easier recognising them mirrored in others. We teach teens to give gentle and honest feedback and assist them in receiving uncomfortable feedback without old defences or acting out or victim thinking.
-
-This course is specifically designed to deal with age and gender appropriate issues and topics relevant to teenagers in current times.
-
-Topics covered are
-
-·         Creating a vision and identity
-·         Dealing with feelings in a healthy manner
-·         Healthy Communication and interpersonal skills
-·         Inclusion vs exclusion
-·         Peer Pressure and setting healthy boundaries
-·         Body Image and self esteem
-·         Understanding and recognising addictive behaviours, including social media,
-        eating disorders, sex and love addiction and co-dependency.
-·         Maintaining healthy boundaries and recognising toxic behaviour
-·         Making informed decisions
-
-Parents are asked to attend the first and last week’s sessions as we feel the family needs to work together as a unit to achieve a positive and cooperative family dynamic.
-
-Cost of the course including all course materials is R3280 payment plans can be arranged.`,
+Cost of the course including all course materials is R3280 and payment plans can be arranged.`,
     backgroundUrl: "./src/assets/benefits/card-3.svg",
     imageUrl: benefitImage2,
   },

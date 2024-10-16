@@ -1,9 +1,39 @@
-import { benefits } from "../constants";
+// import { benefits } from "../constants";
 import Heading from "./Heading";
 import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
 import ClipPath from "../assets/svg/ClipPath";
 import { Gradient } from "./design/Roadmap";
+import card1 from "../assets/benefits/card-1.svg";
+import card2 from "../assets/benefits/card-2.svg";
+import card3 from "../assets/benefits/card-3.svg";
+
+const updatedBenefits = [
+  {
+    id: 1,
+    backgroundUrl: card1,
+    imageUrl: card1,
+    title: "Community Programmes",
+    text: "Equipping adolescents and parents with life skills workshops to navigate present-day challenges and human experiences. Learn healthy coping mechanisms, emotional regulation, and build strong foundations for individuals and families.",
+    light: true,
+  },
+  {
+    id: 2,
+    backgroundUrl: card2,
+    imageUrl: card2,
+    title: "Counselling",
+    text: "Our network of highly trained therapists provides individual, family, and group counselling. We address a wide range of concerns, including grief, anger management, addictions, trauma, and relationship issues. In-person and online sessions are available.",
+    light: true,
+  },
+  {
+    id: 3,
+    backgroundUrl: card3,
+    imageUrl: card3,
+    title: "Courses",
+    text: "We offer a variety of courses designed to raise consciousness in all aspects of life. Find workshops and training programs for individuals, families, businesses, and schools, including soft skills development, team building, and conflict resolution.",
+    light: true,
+  },
+];
 
 const ServiceCards = ({ onScrollToCard }) => {
   return (
@@ -14,7 +44,7 @@ const ServiceCards = ({ onScrollToCard }) => {
           title="Living in the Solution, with Raising Consciousness"
         />
         <div className="flex flex-wrap gap-10 mb-10 lg:flex-row">
-          {benefits.map((item, index) => (
+          {updatedBenefits.map((item, index) => (
             <div
               className="block relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem]"
               style={{
