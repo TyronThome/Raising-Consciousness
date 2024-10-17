@@ -3,6 +3,7 @@ import Heading from "./Heading";
 import { Gradient } from "./design/Roadmap";
 import companyLogo from "../assets/logo.webp";
 import directorImage from "../assets/director.webp";
+import Carousel from "./Carousel";
 
 const About = () => {
   return (
@@ -141,6 +142,8 @@ const About = () => {
             to become the best versions of themselves.
           </p>
         </div>
+
+        <Carousel />
       </div>
     </Section>
   );
