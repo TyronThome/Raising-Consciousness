@@ -1,35 +1,13 @@
 import Section from "./Section";
-// import { smallSphere, stars } from "../assets";
 import Heading from "./Heading";
 import { Gradient } from "./design/Roadmap";
-import companyLogo from "../assets/image-2.webp";
+import companyLogo from "../assets/logo.webp";
 import directorImage from "../assets/director.webp";
-
-// ABOUT SECTION
 
 const About = () => {
   return (
     <Section className="overflow-hidden" id="about">
       <div className="container relative z-2">
-        {/* <div className="hidden relative justify-center mb-[6.5rem] lg:flex">
-        <img
-          src={smallSphere}
-          className="relative z-1"
-          width={255}
-          height={255}
-          alt="Sphere"
-        />
-        <div className="absolute top-1/2 left-1/2 w-[60rem] -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-          <img
-            src={stars}
-            className="w-full"
-            width={950}
-            height={400}
-            alt="Stars"
-          />
-        </div>
-      </div> */}
-
         <Heading
           tag="The roots of Raising Consciousness"
           title="Who we are"
@@ -38,7 +16,7 @@ const About = () => {
 
         <Gradient />
 
-        <h4 className="h4 flex justify-center text-n-2">About us </h4>
+        <h4 className="h4 flex justify-center text-n-2">About Us </h4>
         <div className="flex justify-center mt-4">
           <img
             src={companyLogo}
@@ -48,43 +26,42 @@ const About = () => {
         </div>
         <div className="container flex justify-center items-center">
           <p className="text-n-3">
-            Many people think consciousness is some kind of highly evolved
-            spiritual thing one achieves through a guru, and perhaps a trip to
-            India and hours of meditating, or such like. <br />
-            In fact, it is a simple thing. By looking at oneself and becoming
-            aware of our behaviours, thoughts, attitudes and actions, and how
-            they affect ourselves and others, we are becoming more conscious,
-            and thereby raising our consciousness. <br />
-            When we have a better understanding of what is, and what isn’t
-            working for us in our lives, and why, then we are better able to
-            find solutions and get into action. We encourage individuals to
-            become the best version of themselves and encourage people to
-            endeavour to improve themselves and their environment each day in
-            one small way. When we improve ourselves, we improve our world.{" "}
+            Many people view consciousness as a highly evolved spiritual state
+            achieved through a guru, a trip to India, or hours of meditation. In
+            reality, it&apos;s a much simpler concept. By reflecting on
+            ourselves—our behaviors, thoughts, attitudes, and actions—and
+            understanding how they affect both ourselves and others, we begin to
+            raise our consciousness. <br />
             <br />
-            Raising Consciousness is a platform set up to supply information,
-            resources and solutions to assist the raising of consciousness in
-            all areas of society, including the home, workplace, and schools.{" "}
+            When we gain clarity about what is working and what isn’t in our
+            lives, we are better equipped to find solutions and take action. We
+            encourage individuals to become the best versions of themselves and
+            to strive for daily improvements, no matter how small. When we
+            enhance ourselves, we ultimately improve our world. <br />
+            <br />
+            Raising Consciousness is a platform dedicated to providing
+            information, resources, and solutions to elevate consciousness
+            across all areas of society, including homes, workplaces, and
+            schools. <br />
             <br />
             We offer a series of life skills workshops and courses designed for
-            adolescents and parents, to better equip them with living skills to
-            enable them deal with the challenges of our current times and being
-            human. <br />
-            Because we understand and create awareness of the effect an
-            individual has on a group, we have designed courses and workshops to
-            assist companies and corporates with staff training and soft skills
-            courses for the workplace. We assist corporations to build team
-            cohesion and cooperation to create an optimum work environment. We
-            also assist with mediation, group facilitation and intervention.{" "}
+            adolescents and parents, equipping them with the tools needed to
+            navigate the challenges of modern life. <br />
             <br />
-            Established as an Non-Profit Company in 2019, Raising Consciousness
-            has sponsored thousands of learners through their school programmes
-            and trained facilitators in providing the training in English,
-            Afrikaans and Xhosa. We aim to continue to spread the awareness
-            through as many schools as possible and rely on donations to enable
-            us to do this. If you would like to donate personally or through
-            your company please push the donate button on our website or
-            whatsapp us to discuss.
+            Recognizing the impact an individual can have on a group, we also
+            design courses and workshops tailored for companies and
+            organizations. Our staff training and soft skills programs foster
+            team cohesion and cooperation, creating optimal work environments.
+            Additionally, we provide mediation, group facilitation, and
+            intervention services. <br />
+            <br />
+            Established as a Non-Profit Company in 2019, Raising Consciousness
+            has sponsored thousands of learners through our school programmes
+            and trained facilitators to deliver training in English, Afrikaans,
+            and Xhosa. We aim to expand our reach into as many schools as
+            possible and rely on donations to achieve this goal. If you would
+            like to contribute personally or through your company, please click
+            the donate button on our website or WhatsApp us to discuss. <br />
           </p>
         </div>
 
@@ -100,83 +77,70 @@ const About = () => {
         </div>
         <div className="container flex justify-center items-center">
           <p className="text-n-3">
-            In 2000, Taryn started working with an NGO which provided Substance
-            Abuse Programmes and life skills training to learners, teachers and
-            parents in a multitude of schools nationwide. Taryn was instrumental
-            with the designing, co-ordination and facilitation of the
-            programmes, and the workshopping and implementation of drug and
-            alcohol policies in the areas of education and industry, as well as
-            the training of educators, parents and community volunteers. She sat
-            on the Western Cape Alcohol and Drug Abuse Forum, and on the
-            committee for the recommendations on evaluating proposals for the
-            United Nations community-based counselling, treatment and
-            rehabilitation services for drug abusers in disadvantaged areas.{" "}
+            Taryn&apos;s career has been deeply rooted in substance abuse
+            programs, life skills training, and therapeutic work with both
+            adolescents and adults. Her journey began in 2000 when she started
+            working with an NGO, where she played a key role in designing,
+            coordinating, and facilitating substance abuse programmes across
+            schools in South Africa. She worked closely with teachers, learners,
+            and parents, extending her expertise to policy design in education
+            and industry regarding drug and alcohol abuse. Taryn also
+            participated in notable committees, such as the Western Cape Alcohol
+            and Drug Abuse Forum, and contributed to a UN-related program aimed
+            at community-based rehabilitation services.
             <br />
-            During this time Taryn worked closely with the Medical Research
-            Council of South Africa, specifically with running focus groups with
-            teens to measure the correlation between teenage drinking and the
-            spread of HIV/AIDS. <br />
-            Working in the schools, where many of the youngsters shared about
-            trauma and other deep underlying issues, Taryn realised the need to
-            further her studies at the South African College of Applied
-            Psychology. This led to a natural progression of counselling and
-            eventually working at some of the top Addiction Treatment Centres in
-            South Africa, namely Dots Plot, Forest Lake Clinic, Stepping Stones,
-            Harmony House and Kenilworth Clinic. Taryn developed an affinity for
-            group therapy facilitation and the process that goes with it. She
-            gained invaluable experience over 13yrs and attended many training
-            programmes and had the privilege to work with many acclaimed mentors
-            and experts in the therapeutic field. Taryn is au fait with many
-            treatment modalities and therapeutic approaches, and has expertise
-            in the treatment of co-dependency, eating disorders, gambling, sex,
-            and gaming addictions, as well as drug and alcohol abuse and
-            addiction. A large part of the treatment programmes Taryn has
-            facilitated and designed include life skills training to replace any
-            previously unhealthy coping skills. Many of the clients Taryn
-            counselled struggled with emotional regulation, self-esteem,
-            boundaries and healthy interpersonal communication. This planted the
-            idea of taking the life skills programmes to schools to equip
-            adolescents to live balanced and happier lives. <br />
-            Whilst working at Kenilworth Clinic Outpatient unit, Taryn was asked
-            to head up and design a programme for a secondary care facility for
-            Kenilworth Clinic. During this time her partner was tragically
-            killed and after successfully implanting and running the secondary
-            care program and unit, Taryn took time out from the therapeutic
-            field to give herself time and space to heal. This led to a
-            successful run at selling property. When her son turned 21 years old
-            Taryn questioned what makes an effective parent and balanced child
-            that grows up to be a happy healthy and independent adult. This and
-            a calling to live a more purposeful life, inspired her to design a
-            set of life skills workshops for adolescents that would equip young
-            people to handle life with greater ease and perhaps prevent them
-            from having to learn these skills later on in life at a rehab
-            facility. Incorporating this training with a group process assists
-            adolescents with self-actualisation and emotional regulation and
-            resilience. She designed a course of 8 workshops for teens and young
-            adults that allows them to gain a sense of themselves and their
-            identity and create a vision for living their lives to their full
-            potential and purpose. <br />
-            The vision is to make these programmes available to all communities,
-            and inspire youngsters to make healthy choices, choose and be
-            positive role models, gain a strong sense of identity and take
-            responsibility to become the best versions of themselves. Taryn set
-            up Raising Consciousness, an organisation that acts as a conduit to
-            guide people to access a variety of services and resources to enable
-            them to better themselves and live happier and healthier lives and
-            take responsibility for the impact that their behaviours and
-            attitudes have on themselves and others and to endeavour to keep
-            that impact positive.
+            <br />
+            In collaboration with the Medical Research Council of South Africa,
+            Taryn conducted focus group research on the correlation between
+            teenage drinking and the spread of HIV/AIDS. This exposure to youth
+            trauma motivated her to further her studies at the South African
+            College of Applied Psychology. With her newfound knowledge, she
+            worked at prominent addiction treatment centers like Dots Plot,
+            Forest Lake Clinic, Stepping Stones, Harmony House, and Kenilworth
+            Clinic. Over 13 years, she developed expertise in various treatment
+            approaches for co-dependency, eating disorders, gambling, sex,
+            gaming, drug, and alcohol addictions.
+            <br />
+            <br />
+            Taryn&apos;s affinity for group therapy facilitation allowed her to
+            gain invaluable experience, particularly in addressing emotional
+            regulation, self-esteem, boundaries, and interpersonal communication
+            in her clients. She integrated life skills training into many of the
+            treatment programmes she designed, believing that equipping people
+            with healthy coping skills is essential for long-term recovery. Her
+            experiences working with trauma and addiction sparked the idea that
+            teaching life skills to adolescents early on could prevent the need
+            for rehabilitation later in life.
+            <br />
+            <br />
+            A personal tragedy, the loss of her partner, led Taryn to take a
+            break from her therapeutic work. After successfully designing and
+            running a secondary care program for Kenilworth Clinic, she took
+            time away from the field to heal. During this period, she found
+            success in property sales. However, as her son turned 21, Taryn
+            began reflecting on what it takes to raise a balanced, healthy
+            adult, and she felt called to return to a more purposeful path.
+            <br />
+            <br />
+            Inspired by her reflections on parenting and personal growth, Taryn
+            designed a series of workshops for adolescents focused on building
+            life skills. These workshops aim to help young people manage
+            emotions, develop resilience, and achieve self-actualization. She
+            created an 8-workshop course that allows teens and young adults to
+            gain a sense of identity and purpose, equipping them with tools to
+            navigate life more effectively.
+            <br />
+            <br />
+            To bring her vision to life, Taryn founded Raising Consciousness, an
+            organization that provides access to resources and services aimed at
+            helping people live happier, healthier lives. Through this
+            initiative, she hopes to inspire young people to make healthy
+            choices, act as positive role models, and take responsibility for
+            their personal growth. Her ultimate goal is to make these life
+            skills programs available to all communities, empowering adolescents
+            to become the best versions of themselves.
           </p>
         </div>
-
-        {/* <div className="flex justify-center mt-10">
-        <a
-          className="text-xs font-code font-bold tracking-wider uppercase border-b"
-          href="/pricing"
-        >
-          See the full details
-        </a>
-      </div> */}
       </div>
     </Section>
   );

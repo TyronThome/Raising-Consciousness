@@ -73,7 +73,6 @@ const Header = () => {
           />
         </div>
 
-        {/* Navigation Links */}
         <nav
           className={`${
             openNavigation ? "flex" : "hidden"

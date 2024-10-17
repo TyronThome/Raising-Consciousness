@@ -3,6 +3,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import emailjs from "emailjs-com";
 import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import Carousel from "../components/Carousel";
 
 const Donate = () => {
   const [amount, setAmount] = useState(0);
@@ -104,14 +105,14 @@ const Donate = () => {
   return (
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-8">
-        Donate to Our Cause
+        <span className="gradient-animation">Donate to Our Cause</span>
       </h1>
       <p className="text-lg text-center mb-8">
         Your contributions help us continue our mission to raise consciousness.
       </p>
       <div className="flex justify-center">
         <form onSubmit={handleDonate} className="flex flex-col gap-8 m-4 py-2">
-          <div className="form-group flex gap-5">
+          <div className="flex gap-5">
             <label htmlFor="amount">Donation Amount (ZAR)</label>
             <input
               type="number"
@@ -120,9 +121,10 @@ const Donate = () => {
               onChange={(e) => setAmount(e.target.value)}
               placeholder="Enter amount"
               required
+              className="text-n-1"
             />
           </div>
-          <div className="form-group flex gap-5">
+          <div className="flex gap-5">
             <label htmlFor="email">Email Address</label>
             <input
               type="email"
@@ -131,16 +133,19 @@ const Donate = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
+              className="text-n-1"
             />
           </div>
           <button
             type="submit"
-            className="px-8 py-3 bg-color-1 text-white rounded-lg hover:bg-color-2 transition-colors"
+            className="px-8 py-3 bg-color-1 text-white rounded-lg hover:bg-color-2 hover:text-black hover:font-bold transition-colors"
           >
             Donate Now
           </button>
         </form>
       </div>
+
+      <Carousel />
     </div>
   );
 };

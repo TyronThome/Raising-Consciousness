@@ -1,12 +1,13 @@
 import {
-  benefitImage2,
   facebook,
   instagram,
   roadmap1,
   roadmap2,
   roadmap3,
   roadmap4,
-  twitter,
+  email,
+  whatsapp,
+  logo,
 } from "../assets";
 
 export const navigation = [
@@ -104,31 +105,6 @@ If your organization requires any of our training or workshops, please do not he
   },
 ];
 
-export const benefits = [
-  {
-    id: "0",
-    title: "Community Programmes",
-    text: "Equipping adolescents and parents with life skills workshops to navigate present-day challenges and human experiences. Learn healthy coping mechanisms, emotional regulation, and build strong foundations for individuals and families.",
-    backgroundUrl: "./src/assets/benefits/card-1.svg",
-    imageUrl: benefitImage2,
-  },
-  {
-    id: "1",
-    title: "Counselling",
-    text: "Our network of highly trained therapists provides individual, family, and group counselling. We address a wide range of concerns, including grief, anger management, addictions, trauma, and relationship issues. In-person and online sessions are available.",
-    backgroundUrl: "./src/assets/benefits/card-2.svg",
-    imageUrl: benefitImage2,
-    light: true,
-  },
-  {
-    id: "2",
-    title: "Courses",
-    text: "We offer a variety of courses designed to raise consciousness in all aspects of life. Find workshops and training programs for individuals, families, businesses, and schools, including soft skills development, team building, and conflict resolution.",
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
-    imageUrl: benefitImage2,
-  },
-];
-
 export const services = [
   {
     id: "0",
@@ -157,8 +133,7 @@ PROGRAMME AIMS
 9.  Prevention programmes are adapted to address the specific nature and diversities of the drug abuse problem in the different communities. 
 10. The higher the level of risk of the target population, the more intensive the prevention effort must be and the earlier it must begin.`,
 
-    backgroundUrl: "./src/assets/benefits/card-1.svg",
-    imageUrl: benefitImage2,
+    imageUrl: logo,
   },
   {
     id: "1",
@@ -189,8 +164,7 @@ Parent Support Therapy and Workshops
 We also offer tailored counseling, support, and training for specific issues that may arise within group dynamics, whether in family settings, schools, or organizations.
 
 All counseling and therapy services are available through online or in-person sessions.`,
-    backgroundUrl: "./src/assets/benefits/card-2.svg",
-    imageUrl: benefitImage2,
+    imageUrl: logo,
     light: true,
   },
   {
@@ -225,23 +199,22 @@ Topics covered are
 Parents are asked to attend the first and last week’s sessions as we feel the family needs to work together as a unit to achieve a positive and cooperative family dynamic.
 
 Cost of the course including all course materials is R3280 and payment plans can be arranged.`,
-    backgroundUrl: "./src/assets/benefits/card-3.svg",
-    imageUrl: benefitImage2,
+    imageUrl: logo,
   },
 ];
 
 export const socials = [
-  // {
-  //   id: "0",
-  //   title: "Discord",
-  //   iconUrl: discordBlack,
-  //   url: "#",
-  // },
+  {
+    id: "0",
+    title: "Email",
+    iconUrl: email,
+    url: "mailto:info@raisingconsciousness.co.za",
+  },
   {
     id: "1",
-    title: "Twitter",
-    iconUrl: twitter,
-    url: "#",
+    title: "WhatsApp",
+    iconUrl: whatsapp,
+    url: "https://wa.me/27783479977",
   },
   {
     id: "2",
@@ -249,12 +222,6 @@ export const socials = [
     iconUrl: instagram,
     url: "https://www.instagram.com/raising_consciousnessza/",
   },
-  // {
-  //   id: "3",
-  //   title: "Telegram",
-  //   iconUrl: telegram,
-  //   url: "#",
-  // },
   {
     id: "3",
     title: "Facebook",

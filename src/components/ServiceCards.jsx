@@ -1,7 +1,3 @@
-// Importing SVGs with relative paths
-import card1 from "../assets/card-1.svg";
-import card2 from "../assets/card-2.svg";
-import card3 from "../assets/card-3.svg";
 import Heading from "./Heading";
 import Section from "./Section";
 import { GradientLight } from "./design/Benefits";
@@ -11,24 +7,18 @@ import { Gradient } from "./design/Roadmap";
 const updatedBenefits = [
   {
     id: 1,
-    backgroundUrl: card1,
-    imageUrl: card1,
     title: "Community Programmes",
     text: "Equipping adolescents and parents with life skills workshops to navigate present-day challenges and human experiences. Learn healthy coping mechanisms, emotional regulation, and build strong foundations for individuals and families.",
     light: true,
   },
   {
     id: 2,
-    backgroundUrl: card2,
-    imageUrl: card2,
     title: "Counselling",
     text: "Our network of highly trained therapists provides individual, family, and group counselling. We address a wide range of concerns, including grief, anger management, addictions, trauma, and relationship issues. In-person and online sessions are available.",
     light: true,
   },
   {
     id: 3,
-    backgroundUrl: card3,
-    imageUrl: card3,
     title: "Courses",
     text: "We offer a variety of courses designed to raise consciousness in all aspects of life. Find workshops and training programs for individuals, families, businesses, and schools, including soft skills development, team building, and conflict resolution.",
     light: true,

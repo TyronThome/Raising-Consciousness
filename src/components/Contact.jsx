@@ -54,7 +54,7 @@ const Contact = () => {
 
         <div className="mt-8">
           <div className="flex flex-col items-center space-y-4">
-            <div className="flex lg:flex-row gap-5 flex-col">
+            <div className="flex lg:flex-row gap-5 flex-col z-1">
               <div className="flex items-center bg-yellow-600 rounded-lg hover:bg-blue-400 transition py-2 px-4">
                 <AiOutlineMail className="text-2xl mr-2" />
                 <a
@@ -79,10 +79,10 @@ const Contact = () => {
             </div>
           </div>
 
-          <GradientLight />
+          <GradientLight className="z-0" />
           <form
             onSubmit={handleSubmit}
-            className="mt-6 bg-white rounded-lg shadow-lg p-6"
+            className="mt-6 bg-white/15 rounded-lg shadow-lg p-6"
           >
             {!isFormSubmitted ? (
               <div className="flex flex-col space-y-4">
@@ -123,7 +123,7 @@ const Contact = () => {
                 />
                 <button
                   type="submit"
-                  className={`mt-4 bg-blue-500 text-white rounded-lg p-2 ${
+                  className={`mt-4 bg-teal-600 text-white rounded-lg p-2 hover:bg-blue-500 ${
                     loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   disabled={loading}

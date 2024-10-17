@@ -17,19 +17,19 @@ import roadmap2 from "./roadmap/image-2.webp";
 import roadmap3 from "./roadmap/image-3.webp";
 import roadmap4 from "./roadmap/image-4.webp";
 
-import benefitCard1 from "./benefits/card-1.svg";
-import benefitCard2 from "./benefits/card-2.svg";
-import benefitCard3 from "./benefits/card-3.svg";
-import benefitCard4 from "./benefits/card-4.svg";
-import benefitCard5 from "./benefits/card-5.svg";
-import benefitCard6 from "./benefits/card-6.svg";
-
-import benefitImage2 from "./image-2.webp";
+import logo from "./logo.webp";
 
 import facebook from "./socials/facebook.svg";
 import instagram from "./socials/instagram.svg";
-import telegram from "./socials/telegram.svg";
-import twitter from "./socials/twitter.svg";
+import email from "./socials/email.svg";
+import whatsapp from "./socials/whatsapp.svg";
+
+import image1 from "./image-1.webp";
+import image2 from "./image-2.webp";
+import image3 from "./image-3.webp";
+import image4 from "./image-4.webp";
+import image5 from "./image-5.webp";
+import image6 from "./image-6.webp";
 
 export {
   check,
@@ -46,16 +46,16 @@ export {
   roadmap2,
   roadmap3,
   roadmap4,
-  benefitCard1,
-  benefitCard2,
-  benefitCard3,
-  benefitCard4,
-  benefitCard5,
-  benefitCard6,
-  benefitImage2,
+  logo,
   facebook,
   instagram,
-  telegram,
-  twitter,
+  email,
+  whatsapp,
   raisingconsciousness,
+  image1,
+  image2,
+  image3,
+  image4,
+  image5,
+  image6,
 };
