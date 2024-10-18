@@ -123,7 +123,7 @@ const Contact = () => {
                 />
                 <button
                   type="submit"
-                  className={`mt-4 bg-teal-600 text-white rounded-lg p-2 hover:bg-blue-500 ${
+                  className={`mt-4 bg-teal-600 text-white rounded-lg p-2 hover:bg-blue-800 ${
                     loading ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   disabled={loading}

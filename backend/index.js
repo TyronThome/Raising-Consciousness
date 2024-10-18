@@ -8,18 +8,16 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace this with your frontend's address
+    origin: "https://www.raisingconsciousness.co.za/",
   })
 );
 app.use(bodyParser.json());
 
-// Sample Payment Charge Route
 app.post("/v1/charges", async (req, res) => {
   const { token, amountInCents } = req.body;
-  const secretKey = process.env.VITE_APP_YOCO_SECRET_KEY; // Store your secret key securely
+  const secretKey = process.env.VITE_APP_YOCO_SECRET_KEY;
 
   try {
     const response = await axios.post(
@@ -45,7 +43,6 @@ app.post("/v1/charges", async (req, res) => {
   }
 });
 
-// Start the server
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import emailjs from "emailjs-com";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
 
 const Donate = () => {
   const [amount, setAmount] = useState(0);
   const [email, setEmail] = useState("");
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate();
 
-  // Initialize Yoco SDK on component mount
   useEffect(() => {
     if (window.YocoSDK) {
       window.yoco = new window.YocoSDK({
@@ -25,10 +24,10 @@ const Donate = () => {
     const userID = "9jfKsifhXUcbK9RZH";
 
     const emailParams = {
-      to_email: userEmail, // Ensure this matches your EmailJS template
-      company_email: "info@raisingconsciousness.co.za", // Company email
-      donation_amount: donationAmount, // Pass the donation amount
-      message: `Thank you for your generous donation of ${donationAmount} ZAR!`, // Optional custom message
+      to_email: userEmail,
+      company_email: "info@raisingconsciousness.co.za",
+      donation_amount: donationAmount,
+      message: `Thank you for your generous donation of ${donationAmount} ZAR!`,
     };
 
     emailjs
@@ -64,10 +63,9 @@ const Donate = () => {
         if (result.error) {
           toast.error(`Payment failed: ${result.error.message}`);
         } else {
-          // Send the token, amount, and email to the backend for processing
           try {
             const response = await axios.post(
-              "http://localhost:5000/v1/charges",
+              "https://www.raisingconsciousness.co.za/v1/charges",
               {
                 token: result.id,
                 amountInCents: amount * 100,
@@ -76,18 +74,14 @@ const Donate = () => {
             console.log("Backend response:", response);
 
             if (response.data.status === "successful") {
-              // Show success notification
               toast.success("Donation successful! Thank you for your support.");
 
-              // Send confirmation email
               sendConfirmationEmail(email, amount);
 
-              // Reset the amount and email input
               setAmount(0);
               setEmail("");
 
-              // Redirect to home screen
-              navigate("/"); // Redirect to the home screen
+              navigate("/");
             } else {
               toast.error("Donation failed. Please try again.");
             }
