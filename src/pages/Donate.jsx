@@ -40,12 +40,12 @@ const Donate = () => {
           try {
             const apiUrl =
               import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+            console.log(`API URL being used: ${apiUrl}`);
 
-            // Include the email when sending the charge request to the backend
             const response = await axios.post(`${apiUrl}/v1/charges`, {
               token: result.id,
               amountInCents: amount * 100,
-              email: email, // Pass email to the backend
+              email: email,
             });
 
             console.log("Backend response:", response.data);

@@ -29,6 +29,7 @@ const sendConfirmationEmail = async (userEmail, donationAmount) => {
   };
 
   try {
+    console.log(`Sending confirmation email to: ${userEmail}`);
     await emailjs.send(serviceID, templateID, emailParams, userID);
     console.log("Confirmation email sent successfully!");
   } catch (error) {
@@ -39,6 +40,12 @@ const sendConfirmationEmail = async (userEmail, donationAmount) => {
 app.post("/v1/charges", async (req, res) => {
   const { amountInCents, cancelUrl, successUrl, failureUrl, email } = req.body;
   const secretKey = process.env.VITE_APP_YOCO_SECRET_KEY;
+
+  // Log incoming request data
+  console.log("Received payment request:", req.body);
+  console.log(
+    `Using Yoco secret key: ${secretKey ? "Present" : "Not present"}`
+  );
 
   try {
     const response = await axios.post(
@@ -57,13 +64,22 @@ app.post("/v1/charges", async (req, res) => {
       }
     );
 
+    // Log Yoco API response
+    console.log("Yoco API response:", response.data);
+
+    // Check if payment was successful
     if (response.data.status === "successful") {
+      console.log("Payment successful. Sending confirmation email.");
       await sendConfirmationEmail(email, amountInCents / 100);
+    } else {
+      console.log("Payment not successful:", response.data.status);
     }
 
     res.status(200).json(response.data);
   } catch (error) {
+    // Log error details for debugging
     console.error("Error processing payment:", error);
+    console.error("Error response from Yoco API:", error.response?.data);
     res
       .status(400)
       .json({ message: error.response?.data?.message || error.message });
