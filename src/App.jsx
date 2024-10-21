@@ -10,6 +10,9 @@ import ServicesPage from "./components/ServicesPage";
 import Donate from "./pages/Donate";
 import { Toaster } from "react-hot-toast";
 import { Analytics } from "@vercel/analytics/react";
+import CancelPage from "./pages/CancelPage";
+import SuccessPage from "./pages/SuccessPage";
+import FailurePage from "./pages/FailurePage";
 
 const App = () => {
   return (
@@ -34,6 +37,9 @@ const App = () => {
           />
 
           <Route path="/donate" element={<Donate />} />
+          <Route path="/cancel" element={<CancelPage />} />
+          <Route path="/success" element={<SuccessPage />} />
+          <Route path="/failure" element={<FailurePage />} />
         </Routes>
       </div>
 

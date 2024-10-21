@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import emailjs from "emailjs-com";
-import { useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
 
 const Donate = () => {
   const [amount, setAmount] = useState(0);
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
 
   useEffect(() => {
     if (window.YocoSDK) {
@@ -17,29 +14,6 @@ const Donate = () => {
       });
     }
   }, []);
-
-  const sendConfirmationEmail = (userEmail, donationAmount) => {
-    const serviceID = "service_2o5q5p9";
-    const templateID = "template_sj40agl";
-    const userID = "9jfKsifhXUcbK9RZH";
-
-    const emailParams = {
-      to_email: userEmail,
-      company_email: "info@raisingconsciousness.co.za",
-      donation_amount: donationAmount,
-      message: `Thank you for your generous donation of ${donationAmount} ZAR!`,
-    };
-
-    emailjs
-      .send(serviceID, templateID, emailParams, userID)
-      .then(() => {
-        toast.success("Confirmation email sent!");
-      })
-      .catch((err) => {
-        console.error("Error sending email:", err);
-        toast.error("Failed to send confirmation email.");
-      });
-  };
 
   const handleDonate = (e) => {
     e.preventDefault();
@@ -65,31 +39,27 @@ const Donate = () => {
         } else {
           try {
             const apiUrl =
-              import.meta.env.MODE === "production"
-                ? "https://www.raisingconsciousness.co.za/api"
-                : "http://localhost:5000";
+              import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
 
+            // Include the email when sending the charge request to the backend
             const response = await axios.post(`${apiUrl}/v1/charges`, {
               token: result.id,
               amountInCents: amount * 100,
+              email: email, // Pass email to the backend
             });
 
-            console.log("Backend response:", response);
+            console.log("Backend response:", response.data);
 
-            if (response.data.status === "successful") {
-              toast.success("Donation successful! Thank you for your support.");
-
-              sendConfirmationEmail(email, amount);
-
-              setAmount(0);
-              setEmail("");
-
-              navigate("/");
+            if (response.data.redirectUrl) {
+              window.location.href = response.data.redirectUrl;
             } else {
-              toast.error("Donation failed. Please try again.");
+              toast.error("Failed to initiate payment. Please try again.");
             }
           } catch (error) {
-            console.error("Error:", error);
+            console.error(
+              "Error during donation:",
+              error.response?.data || error.message
+            );
             toast.error(
               `Error: ${error.response?.data?.message || error.message}`
             );
