@@ -42,7 +42,7 @@ const Donate = () => {
               import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
             console.log(`API URL being used: ${apiUrl}`);
 
-            const response = await axios.post(`${apiUrl}/v1/charges`, {
+            const response = await axios.post(`${apiUrl}/api/checkouts`, {
               token: result.id,
               amountInCents: amount * 100,
               email: email,
