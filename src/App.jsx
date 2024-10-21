@@ -9,11 +9,13 @@ import Contact from "./components/Contact";
 import ServicesPage from "./components/ServicesPage";
 import Donate from "./pages/Donate";
 import { Toaster } from "react-hot-toast";
+import { Analytics } from "@vercel/analytics/react";
 
 const App = () => {
   return (
     <>
       <Toaster />
+      <Analytics />
       <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden">
         <Header />
         <Routes>

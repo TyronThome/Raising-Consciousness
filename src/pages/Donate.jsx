@@ -64,13 +64,16 @@ const Donate = () => {
           toast.error(`Payment failed: ${result.error.message}`);
         } else {
           try {
-            const response = await axios.post(
-              "https://www.raisingconsciousness.co.za/v1/charges",
-              {
-                token: result.id,
-                amountInCents: amount * 100,
-              }
-            );
+            const apiUrl =
+              import.meta.env.MODE === "production"
+                ? "https://www.raisingconsciousness.co.za/api"
+                : "http://localhost:5000";
+
+            const response = await axios.post(`${apiUrl}/v1/charges`, {
+              token: result.id,
+              amountInCents: amount * 100,
+            });
+
             console.log("Backend response:", response);
 
             if (response.data.status === "successful") {
