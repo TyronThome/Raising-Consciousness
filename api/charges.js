@@ -37,7 +37,7 @@ const sendConfirmationEmail = async (userEmail, donationAmount) => {
   }
 };
 
-app.post("api/checkouts", async (req, res) => {
+app.post("/donate/api/checkouts", async (req, res) => {
   const { amountInCents, cancelUrl, successUrl, failureUrl, email } = req.body;
   const secretKey = process.env.VITE_APP_YOCO_SECRET_KEY;
 
