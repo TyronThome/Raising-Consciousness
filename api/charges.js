@@ -1,20 +1,11 @@
 import express from "express";
-import cors from "cors";
-import bodyParser from "body-parser";
 import axios from "axios";
 import dotenv from "dotenv";
 import emailjs from "emailjs-com";
 
 dotenv.config();
 
-const app = express();
-
-app.use(
-  cors({
-    origin: "https://www.raisingconsciousness.co.za/",
-  })
-);
-app.use(bodyParser.json());
+const router = express.Router();
 
 const sendConfirmationEmail = async (userEmail, donationAmount) => {
   const serviceID = "service_2o5q5p9";
@@ -37,11 +28,10 @@ const sendConfirmationEmail = async (userEmail, donationAmount) => {
   }
 };
 
-app.post("/donate/api/checkouts", async (req, res) => {
-  const { amountInCents, cancelUrl, successUrl, failureUrl, email } = req.body;
+router.post("/checkouts", async (req, res) => {
+  const { amountInCents, email, token } = req.body;
   const secretKey = process.env.VITE_APP_YOCO_SECRET_KEY;
 
-  // Log incoming request data
   console.log("Received payment request:", req.body);
   console.log(
     `Using Yoco secret key: ${secretKey ? "Present" : "Not present"}`
@@ -51,11 +41,12 @@ app.post("/donate/api/checkouts", async (req, res) => {
     const response = await axios.post(
       "https://payments.yoco.com/api/checkouts",
       {
+        token: token,
         amount: amountInCents,
         currency: "ZAR",
-        cancelUrl: cancelUrl,
-        successUrl: successUrl,
-        failureUrl: failureUrl,
+        cancelUrl: "https://www.raisingconsciousness.co.za/donate/cancel",
+        successUrl: "https://www.raisingconsciousness.co.za/donate/success",
+        failureUrl: "https://www.raisingconsciousness.co.za/donate/failure",
       },
       {
         headers: {
@@ -64,10 +55,8 @@ app.post("/donate/api/checkouts", async (req, res) => {
       }
     );
 
-    // Log Yoco API response
     console.log("Yoco API response:", response.data);
 
-    // Check if payment was successful
     if (response.data.status === "successful") {
       console.log("Payment successful. Sending confirmation email.");
       await sendConfirmationEmail(email, amountInCents / 100);
@@ -77,7 +66,6 @@ app.post("/donate/api/checkouts", async (req, res) => {
 
     res.status(200).json(response.data);
   } catch (error) {
-    // Log error details for debugging
     console.error("Error processing payment:", error);
     console.error("Error response from Yoco API:", error.response?.data);
     res
@@ -86,4 +74,4 @@ app.post("/donate/api/checkouts", async (req, res) => {
   }
 });
 
-export default app;
+export default router;

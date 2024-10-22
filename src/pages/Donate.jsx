@@ -40,15 +40,14 @@ const Donate = () => {
           try {
             const apiUrl =
               import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
-            console.log(`API URL being used: ${apiUrl}`);
-
-            const response = await axios.post(`${apiUrl}/checkouts`, {
-              token: result.id,
-              amountInCents: amount * 100,
-              email: email,
-            });
-
-            console.log("Backend response:", response.data);
+            const response = await axios.post(
+              `${apiUrl}/donate/api/checkouts`,
+              {
+                token: result.id,
+                amountInCents: amount * 100,
+                email: email,
+              }
+            );
 
             if (response.data.redirectUrl) {
               window.location.href = response.data.redirectUrl;
@@ -56,10 +55,6 @@ const Donate = () => {
               toast.error("Failed to initiate payment. Please try again.");
             }
           } catch (error) {
-            console.error(
-              "Error during donation:",
-              error.response?.data || error.message
-            );
             toast.error(
               `Error: ${error.response?.data?.message || error.message}`
             );
