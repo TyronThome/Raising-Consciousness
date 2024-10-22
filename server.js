@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import cors from "cors";
 import charges from "./api/charges.js";
 
+const __dirname = path.resolve();
+
 dotenv.config();
 
 const app = express();
@@ -23,6 +25,11 @@ app.use("/api/charges", charges);
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
+});
+
+app.use((req, res, next) => {
+  console.log(`${req.method} request for '${req.url}'`);
+  next();
 });
 
 app.listen(PORT, () => {

@@ -15,7 +15,7 @@ const Donate = () => {
     }
   }, []);
 
-  const handleDonate = (e) => {
+  const handleDonate = async (e) => {
     e.preventDefault();
 
     if (!amount || amount <= 0) {
