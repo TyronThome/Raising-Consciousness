@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/v1/charges",
+      "source": "/donate/api/checkouts",
       "destination": "/api/charges"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
