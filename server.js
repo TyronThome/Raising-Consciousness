@@ -5,7 +5,6 @@ import cors from "cors";
 import charges from "./api/charges.js";
 
 const __dirname = path.resolve();
-
 dotenv.config();
 
 const app = express();
@@ -32,7 +31,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/donate/api/checkouts", charges);
+app.post("/api/charges/checkouts", charges);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

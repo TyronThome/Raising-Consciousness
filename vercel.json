@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/donate/api/checkouts",
+      "destination": "/api/charges/checkouts"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
