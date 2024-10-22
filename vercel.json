@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/donate/api/checkouts",
-      "destination": "/api/charges"
+      "destination": "/api/charges/checkouts"
     },
     {
       "source": "/(.*)",
