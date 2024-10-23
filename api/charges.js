@@ -44,13 +44,15 @@ router.post("/checkouts", async (req, res) => {
         token: token,
         amount: amountInCents,
         currency: "ZAR",
+        email: email,
         cancelUrl: "https://www.raisingconsciousness.co.za/donate/cancel",
         successUrl: "https://www.raisingconsciousness.co.za/donate/success",
         failureUrl: "https://www.raisingconsciousness.co.za/donate/failure",
       },
       {
         headers: {
-          Authorization: `Bearer ${secretKey}`,
+          "X-Auth-Secret-Key": process.env.VITE_APP_YOCO_SECRET_KEY,
+          "Content-Type": "application/json",
         },
       }
     );

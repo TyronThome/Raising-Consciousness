@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/donate/api/checkouts",
-      "destination": "/api/charges/checkouts"
+      "source": "/api/charges/(.*)",
+      "destination": "/api/charges/$1"
     },
     {
       "source": "/(.*)",
