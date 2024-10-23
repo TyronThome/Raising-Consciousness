@@ -30,7 +30,7 @@ const sendConfirmationEmail = async (userEmail, donationAmount) => {
 
 router.post("/checkouts", async (req, res) => {
   const { amountInCents, email, token } = req.body;
-  const secretKey = process.env.VITE_APP_YOCO_SECRET_KEY;
+  const secretKey = process.env.YOCO_SECRET_KEY;
 
   console.log("Received payment request:", req.body);
   console.log(
@@ -51,7 +51,7 @@ router.post("/checkouts", async (req, res) => {
       },
       {
         headers: {
-          "X-Auth-Secret-Key": process.env.VITE_APP_YOCO_SECRET_KEY,
+          "X-Auth-Secret-Key": process.env.YOCO_SECRET_KEY,
           "Content-Type": "application/json",
         },
       }
