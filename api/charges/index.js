@@ -73,7 +73,7 @@ export default async function handler(req, res) {
     };
 
     const requestHeaders = {
-      "X-Auth-Secret-Key": secretKey,
+      Authorization: `Bearer ${secretKey}`,
       "Content-Type": "application/json",
     };
 
