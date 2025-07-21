@@ -1,5 +1,5 @@
 import { useState } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { AiOutlineMail, AiFillPhone, AiOutlineWhatsApp } from "react-icons/ai";
 import Section from "./Section";
 import Heading from "./Heading";

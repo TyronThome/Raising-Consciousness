@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import ButtonGradient from "./assets/svg/ButtonGradient";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -35,14 +35,12 @@ const App = () => {
               </>
             }
           />
-
           <Route path="/donate" element={<Donate />} />
           <Route path="/cancel" element={<CancelPage />} />
           <Route path="/success" element={<SuccessPage />} />
           <Route path="/failure" element={<FailurePage />} />
         </Routes>
       </div>
-
       <ButtonGradient />
     </>
   );

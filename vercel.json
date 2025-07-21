@@ -1,12 +1,13 @@
 {
+  "functions": {
+    "api/charges/index.js": {
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     {
-      "source": "/api/charges/(.*)",
-      "destination": "/api/charges/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/api/charges",
+      "destination": "/api/charges/index.js"
     }
   ]
 }

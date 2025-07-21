@@ -38,16 +38,11 @@ const Donate = () => {
           toast.error(`Payment failed: ${result.error.message}`);
         } else {
           try {
-            const apiUrl =
-              import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
-            const response = await axios.post(
-              `${apiUrl}/api/charges/checkouts`,
-              {
-                token: result.id,
-                amountInCents: amount * 100,
-                email: email,
-              }
-            );
+            const response = await axios.post("/api/charges", {
+              token: result.id,
+              amountInCents: amount * 100,
+              email: email,
+            });
 
             if (response.data.redirectUrl) {
               window.location.href = response.data.redirectUrl;

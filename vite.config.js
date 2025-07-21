@@ -8,12 +8,12 @@ export default defineConfig({
     assetsDir: "assets", // Optional, but ensures assets are kept in 'dist/assets' folder
   },
   base: "/",
-  server: {
-    proxy: {
-      "/api": {
-        target: "http://localhost:5000",
-        changeOrigin: true,
-      },
-    },
-  },
+  // server: {
+  //   proxy: {
+  //     "/api": {
+  //       target: "http://localhost:5000",
+  //       changeOrigin: true,
+  //     },
+  //   },
+  // },
 });
