@@ -2,11 +2,6 @@
   "env": {
     "YOCO_SECRET_KEY": "@yoco-secret-key"
   },
-  "build": {
-    "env": {
-      "YOCO_SECRET_KEY": "@yoco-secret-key"
-    }
-  },
   "functions": {
     "api/charges/index.js": {
       "maxDuration": 30
