@@ -21,55 +21,27 @@ export default async function handler(req, res) {
     return res.status(400).json({ message: "Missing required fields" });
   }
 
-  // Comprehensive environment debugging
-  console.log("=== ENVIRONMENT DEBUG ===");
-  console.log(
-    "All env keys:",
-    Object.keys(process.env).filter((key) => key.includes("YOCO"))
-  );
-  console.log("YOCO_SECRET_KEY exists:", !!process.env.YOCO_SECRET_KEY);
-  console.log(
-    "YOCO_SECRET_KEY length:",
-    process.env.YOCO_SECRET_KEY?.length || 0
-  );
-  console.log(
-    "YOCO_SECRET_KEY starts with sk_:",
-    process.env.YOCO_SECRET_KEY?.startsWith("sk_")
-  );
-  console.log(
-    "Raw env value (first 10 chars):",
-    process.env.YOCO_SECRET_KEY?.substring(0, 10)
-  );
-  console.log("========================");
-
   const secretKey = process.env.YOCO_SECRET_KEY;
 
   if (!secretKey) {
     console.error("YOCO_SECRET_KEY environment variable is not set");
     return res.status(500).json({
       message: "Server configuration error - missing secret key",
-      debug: {
-        envKeys: Object.keys(process.env).filter((key) => key.includes("YOCO")),
-        hasKey: !!secretKey,
-      },
     });
   }
 
-  console.log("Received payment request:", {
+  console.log("Processing direct payment:", {
     amount: amountInCents,
     email: email,
     tokenLength: token?.length,
   });
 
   try {
+    // Process the payment directly using the token from the popup
     const requestData = {
       token,
-      amount: amountInCents,
+      amountInCents,
       currency: "ZAR",
-      email: email,
-      cancelUrl: "https://www.raisingconsciousness.co.za/cancel",
-      successUrl: "https://www.raisingconsciousness.co.za/success",
-      failureUrl: "https://www.raisingconsciousness.co.za/failure",
     };
 
     const requestHeaders = {
@@ -77,33 +49,48 @@ export default async function handler(req, res) {
       "Content-Type": "application/json",
     };
 
-    console.log("Making request to Yoco with headers:", {
-      hasSecretKey: !!requestHeaders["X-Auth-Secret-Key"],
-      secretKeyPrefix: requestHeaders["X-Auth-Secret-Key"]?.substring(0, 7),
-    });
+    console.log("Making direct charge request to Yoco");
 
+    // Use the charges endpoint for direct payment processing
     const response = await axios.post(
-      "https://payments.yoco.com/api/checkouts",
+      "https://online.yoco.com/v1/charges/",
       requestData,
       { headers: requestHeaders }
     );
 
-    console.log("Yoco API response:", response.data);
+    console.log("Yoco charge response:", response.data);
 
+    // Check if payment was successful
     if (response.data.status === "successful") {
       console.log("Payment successful. Sending confirmation email.");
-      await sendConfirmationEmail(email, amountInCents / 100);
-    } else {
-      console.log("Payment not successful:", response.data.status);
-    }
+      try {
+        await sendConfirmationEmail(email, amountInCents / 100);
+      } catch (emailError) {
+        console.error("Failed to send confirmation email:", emailError);
+        // Don't fail the payment if email fails
+      }
 
-    res.status(200).json(response.data);
+      res.status(200).json({
+        success: true,
+        status: "successful",
+        message: "Payment processed successfully",
+        chargeId: response.data.id,
+      });
+    } else {
+      console.log("Payment failed:", response.data.status);
+      res.status(400).json({
+        success: false,
+        message: "Payment was not successful",
+        status: response.data.status,
+      });
+    }
   } catch (error) {
     console.error("Error processing payment:", error.message);
     console.error("Error response data:", error.response?.data);
     console.error("Error status:", error.response?.status);
 
     res.status(400).json({
+      success: false,
       message: error.response?.data?.message || error.message,
       debug: {
         status: error.response?.status,

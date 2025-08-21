@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Carousel from "../components/Carousel";
+import { useNavigate } from "react-router-dom";
 
 const Donate = () => {
   const [amount, setAmount] = useState(0);
   const [email, setEmail] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (window.YocoSDK) {
@@ -23,10 +26,17 @@ const Donate = () => {
       return;
     }
 
+    if (!email) {
+      toast.error("Please enter your email address.");
+      return;
+    }
+
     if (!window.yoco) {
       toast.error("Yoco SDK is not loaded.");
       return;
     }
+
+    setIsProcessing(true);
 
     window.yoco.showPopup({
       amountInCents: amount * 100,
@@ -36,23 +46,35 @@ const Donate = () => {
       callback: async (result) => {
         if (result.error) {
           toast.error(`Payment failed: ${result.error.message}`);
+          setIsProcessing(false);
         } else {
           try {
+            // Process the payment with the token from the popup
             const response = await axios.post("/api/charges", {
               token: result.id,
               amountInCents: amount * 100,
               email: email,
             });
 
-            if (response.data.redirectUrl) {
-              window.location.href = response.data.redirectUrl;
+            if (
+              response.data.success &&
+              response.data.status === "successful"
+            ) {
+              toast.success("Payment successful! Thank you for your donation.");
+              // Redirect to success page
+              navigate("/success");
             } else {
-              toast.error("Failed to initiate payment. Please try again.");
+              toast.error("Payment failed. Please try again.");
             }
           } catch (error) {
+            console.error("Payment processing error:", error);
             toast.error(
               `Error: ${error.response?.data?.message || error.message}`
             );
+            // Redirect to failure page on error
+            navigate("/failure");
+          } finally {
+            setIsProcessing(false);
           }
         }
       },
@@ -79,6 +101,7 @@ const Donate = () => {
               placeholder="Enter amount"
               required
               className="text-n-1"
+              disabled={isProcessing}
             />
           </div>
           <div className="flex gap-5">
@@ -91,13 +114,17 @@ const Donate = () => {
               placeholder="Enter your email"
               required
               className="text-n-1"
+              disabled={isProcessing}
             />
           </div>
           <button
             type="submit"
-            className="px-8 py-3 bg-color-1 text-white rounded-lg hover:bg-color-2 hover:text-black hover:font-bold transition-colors"
+            disabled={isProcessing}
+            className={`px-8 py-3 bg-color-1 text-white rounded-lg hover:bg-color-2 hover:text-black hover:font-bold transition-colors ${
+              isProcessing ? "opacity-50 cursor-not-allowed" : ""
+            }`}
           >
-            Donate Now
+            {isProcessing ? "Processing..." : "Donate Now"}
           </button>
         </form>
       </div>
